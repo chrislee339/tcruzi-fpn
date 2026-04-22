@@ -1,0 +1,427 @@
+{
+  "reader": "kyndall",
+  "exported_at": "2026-04-20T17:55:11.866Z",
+  "total_images": 84,
+  "scores": {
+    "img_001.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T15:23:43.545Z"
+    },
+    "img_002.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T15:24:00.397Z"
+    },
+    "img_003.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T15:46:58.778Z"
+    },
+    "img_004.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:34:16.288Z"
+    },
+    "img_005.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:34:27.213Z"
+    },
+    "img_006.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:34:38.223Z"
+    },
+    "img_007.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:34:39.845Z"
+    },
+    "img_008.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:34:41.165Z"
+    },
+    "img_009.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:34:50.145Z"
+    },
+    "img_010.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:35:43.801Z"
+    },
+    "img_011.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:49:11.140Z"
+    },
+    "img_012.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:49:25.479Z"
+    },
+    "img_013.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:49:27.824Z"
+    },
+    "img_014.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:49:42.551Z"
+    },
+    "img_015.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:03.788Z"
+    },
+    "img_016.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:28.432Z"
+    },
+    "img_017.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:30.139Z"
+    },
+    "img_018.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:31.576Z"
+    },
+    "img_019.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:33.264Z"
+    },
+    "img_020.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:37.442Z"
+    },
+    "img_021.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:41.324Z"
+    },
+    "img_022.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:43.852Z"
+    },
+    "img_023.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:50:59.744Z"
+    },
+    "img_024.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:02.722Z"
+    },
+    "img_025.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:05.334Z"
+    },
+    "img_026.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:14.640Z"
+    },
+    "img_027.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:16.740Z"
+    },
+    "img_028.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:20.946Z"
+    },
+    "img_029.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:22.424Z"
+    },
+    "img_030.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:23.664Z"
+    },
+    "img_031.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:25.394Z"
+    },
+    "img_032.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:26.605Z"
+    },
+    "img_033.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:27.793Z"
+    },
+    "img_034.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:29.652Z"
+    },
+    "img_035.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:32.932Z"
+    },
+    "img_036.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:34.502Z"
+    },
+    "img_037.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:35.662Z"
+    },
+    "img_038.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:38.186Z"
+    },
+    "img_039.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:44.442Z"
+    },
+    "img_040.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:45.800Z"
+    },
+    "img_041.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:47.222Z"
+    },
+    "img_042.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:53.110Z"
+    },
+    "img_043.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:54.716Z"
+    },
+    "img_044.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:55.876Z"
+    },
+    "img_045.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:51:57.234Z"
+    },
+    "img_046.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:52:53.871Z"
+    },
+    "img_047.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:52:58.763Z"
+    },
+    "img_048.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:00.201Z"
+    },
+    "img_049.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:01.259Z"
+    },
+    "img_050.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:03.299Z"
+    },
+    "img_051.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:07.916Z"
+    },
+    "img_052.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:11.831Z"
+    },
+    "img_053.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:17.039Z"
+    },
+    "img_054.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:21.295Z"
+    },
+    "img_055.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:22.521Z"
+    },
+    "img_056.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:24.125Z"
+    },
+    "img_057.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:25.573Z"
+    },
+    "img_058.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:34.183Z"
+    },
+    "img_059.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:35.981Z"
+    },
+    "img_060.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:45.099Z"
+    },
+    "img_061.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:47.309Z"
+    },
+    "img_062.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:50.185Z"
+    },
+    "img_063.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:51.561Z"
+    },
+    "img_064.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:54.763Z"
+    },
+    "img_065.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:53:56.569Z"
+    },
+    "img_066.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:00.258Z"
+    },
+    "img_067.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:02.293Z"
+    },
+    "img_068.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:06.047Z"
+    },
+    "img_069.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:10.913Z"
+    },
+    "img_070.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:22.419Z"
+    },
+    "img_071.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:39.935Z"
+    },
+    "img_072.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:42.311Z"
+    },
+    "img_073.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:43.617Z"
+    },
+    "img_074.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:44.919Z"
+    },
+    "img_075.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:47.087Z"
+    },
+    "img_076.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:49.731Z"
+    },
+    "img_077.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:50.603Z"
+    },
+    "img_078.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:52.293Z"
+    },
+    "img_079.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:54.517Z"
+    },
+    "img_080.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:56.685Z"
+    },
+    "img_081.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-20T17:54:59.861Z"
+    },
+    "img_082.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:55:01.377Z"
+    },
+    "img_083.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:55:02.845Z"
+    },
+    "img_084.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-20T17:55:04.529Z"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+
+# Large artifacts that should live in Zenodo, not git
+checkpoints/
+dataset_split_fieldlevel/
+dataset_split/
+data/
+*.pth
+*.npz
+
+# Local dev
+.env
+.venv/
+venv/
+node_modules/
+
+# Outputs
+paper_figures/
+audit_package/
+audit_package_*/

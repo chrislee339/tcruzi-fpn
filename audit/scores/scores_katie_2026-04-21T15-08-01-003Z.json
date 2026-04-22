@@ -1,0 +1,427 @@
+{
+  "reader": "katie",
+  "exported_at": "2026-04-21T15:08:01.003Z",
+  "total_images": 84,
+  "scores": {
+    "img_001.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:55:58.713Z"
+    },
+    "img_002.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:56:14.186Z"
+    },
+    "img_003.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:45:01.730Z"
+    },
+    "img_004.jpg": {
+      "answer": "no",
+      "note": "more ambigous due to artifact",
+      "timestamp": "2026-04-21T14:45:15.463Z"
+    },
+    "img_005.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:45:46.701Z"
+    },
+    "img_006.jpg": {
+      "answer": "no",
+      "note": "more ambiguous, image quality/artifact",
+      "timestamp": "2026-04-21T14:45:54.696Z"
+    },
+    "img_007.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:45:56.220Z"
+    },
+    "img_008.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:45:57.659Z"
+    },
+    "img_009.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:46:16.350Z"
+    },
+    "img_010.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:46:33.360Z"
+    },
+    "img_011.jpg": {
+      "answer": "yes",
+      "note": "artifact or trypomastigote",
+      "timestamp": "2026-04-21T15:01:51.112Z"
+    },
+    "img_012.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:46:50.520Z"
+    },
+    "img_013.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:46:52.154Z"
+    },
+    "img_014.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:47:08.739Z"
+    },
+    "img_015.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:47:22.149Z"
+    },
+    "img_016.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:47:46.000Z"
+    },
+    "img_017.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:47:47.191Z"
+    },
+    "img_018.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:47:48.294Z"
+    },
+    "img_019.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:47:49.344Z"
+    },
+    "img_020.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:02.867Z"
+    },
+    "img_021.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:05.094Z"
+    },
+    "img_022.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:06.152Z"
+    },
+    "img_023.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:12.934Z"
+    },
+    "img_024.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:15.453Z"
+    },
+    "img_025.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:16.923Z"
+    },
+    "img_026.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:52.062Z"
+    },
+    "img_027.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:48:53.735Z"
+    },
+    "img_028.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:05.465Z"
+    },
+    "img_029.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:07.595Z"
+    },
+    "img_030.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:08.607Z"
+    },
+    "img_031.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:09.717Z"
+    },
+    "img_032.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:10.512Z"
+    },
+    "img_033.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:12.335Z"
+    },
+    "img_034.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:13.280Z"
+    },
+    "img_035.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:27.344Z"
+    },
+    "img_036.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:28.632Z"
+    },
+    "img_037.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:29.578Z"
+    },
+    "img_038.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:30.703Z"
+    },
+    "img_039.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:36.424Z"
+    },
+    "img_040.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:37.842Z"
+    },
+    "img_041.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:49:38.720Z"
+    },
+    "img_042.jpg": {
+      "answer": "no",
+      "note": "possible partial top left corner but image resolution difficult",
+      "timestamp": "2026-04-21T14:49:59.826Z"
+    },
+    "img_043.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:01.154Z"
+    },
+    "img_044.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:02.041Z"
+    },
+    "img_045.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:03.246Z"
+    },
+    "img_046.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:07.732Z"
+    },
+    "img_047.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:36.744Z"
+    },
+    "img_048.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:38.632Z"
+    },
+    "img_049.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:39.743Z"
+    },
+    "img_050.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:41.677Z"
+    },
+    "img_051.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:50:54.301Z"
+    },
+    "img_052.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:13.613Z"
+    },
+    "img_053.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:22.876Z"
+    },
+    "img_054.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:30.098Z"
+    },
+    "img_055.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:31.885Z"
+    },
+    "img_056.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:33.947Z"
+    },
+    "img_057.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:35.987Z"
+    },
+    "img_058.jpg": {
+      "answer": "no",
+      "note": "resolution bit difficult",
+      "timestamp": "2026-04-21T15:04:59.112Z"
+    },
+    "img_059.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:51:43.321Z"
+    },
+    "img_060.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:02.275Z"
+    },
+    "img_061.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:03.699Z"
+    },
+    "img_062.jpg": {
+      "answer": "no",
+      "note": "bottom leftish partial trypomastigote or artifact",
+      "timestamp": "2026-04-21T15:06:00.322Z"
+    },
+    "img_063.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:20.050Z"
+    },
+    "img_064.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T15:06:20.635Z"
+    },
+    "img_065.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:43.061Z"
+    },
+    "img_066.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:43.939Z"
+    },
+    "img_067.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:45.191Z"
+    },
+    "img_068.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:46.609Z"
+    },
+    "img_069.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:52:47.501Z"
+    },
+    "img_070.jpg": {
+      "answer": "yes",
+      "note": "partial mid left or artifact",
+      "timestamp": "2026-04-21T14:52:50.930Z"
+    },
+    "img_072.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:16.261Z"
+    },
+    "img_073.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:21.368Z"
+    },
+    "img_074.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:22.170Z"
+    },
+    "img_075.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:23.341Z"
+    },
+    "img_076.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:24.809Z"
+    },
+    "img_077.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:26.549Z"
+    },
+    "img_078.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:27.517Z"
+    },
+    "img_079.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:32.752Z"
+    },
+    "img_080.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:33.952Z"
+    },
+    "img_081.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T15:07:48.050Z"
+    },
+    "img_082.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:36.502Z"
+    },
+    "img_083.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:37.755Z"
+    },
+    "img_084.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-21T14:54:45.173Z"
+    },
+    "img_071.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-21T14:55:16.772Z"
+    }
+  }
+}

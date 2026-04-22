@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Chagas blood-smear re-audit</title>
+<style>
+  :root {
+    --bg: #0f1116;
+    --panel: #151823;
+    --text: #e7e9ef;
+    --muted: #8b93a7;
+    --accent: #4c7fff;
+    --yes: #2ea36b;
+    --no: #c44a4a;
+    --border: #252a3a;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+  .hidden { display: none !important; }
+  button {
+    font: inherit; border: 1px solid var(--border);
+    background: var(--panel); color: var(--text);
+    padding: 10px 16px; border-radius: 6px; cursor: pointer;
+  }
+  button:hover { background: #1c2030; }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  input[type="password"], input[type="text"], textarea {
+    font: inherit; background: var(--panel); color: var(--text);
+    border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px;
+  }
+
+  /* ---------- gate ---------- */
+  #gate {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 16px;
+  }
+  #gate .box {
+    max-width: 420px; background: var(--panel);
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 28px;
+  }
+  #gate h1 { margin-top: 0; font-size: 20px; }
+  #gate p { color: var(--muted); }
+  #gate .row { display: flex; gap: 8px; margin-top: 12px; }
+  #gate input { flex: 1; }
+  #gate .err { color: #ff8c8c; margin-top: 8px; min-height: 1em; font-size: 14px; }
+
+  /* ---------- app ---------- */
+  #app { max-width: 920px; margin: 0 auto; padding: 16px; }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  header .title { font-weight: 600; }
+  header .reader { color: var(--muted); font-size: 14px; }
+  header .actions { display: flex; gap: 8px; flex-shrink: 0; }
+  .kb-only { display: inline; }
+  .touch-only { display: none; }
+
+  .reminder {
+    margin: 12px 0 0;
+    padding: 8px 12px;
+    background: rgba(76, 127, 255, 0.08);
+    border: 1px solid rgba(76, 127, 255, 0.35);
+    border-radius: 6px;
+    color: #b9c6ee;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .reminder strong { color: var(--text); }
+
+  .progress-wrap { margin: 14px 0 8px; }
+  .progress-bar {
+    position: relative; height: 10px; background: var(--panel);
+    border-radius: 6px; overflow: hidden; border: 1px solid var(--border);
+  }
+  .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 200ms ease; }
+  .progress-meta { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  .image-wrap {
+    margin: 12px 0 20px; background: var(--panel);
+    border: 1px solid var(--border); border-radius: 10px;
+    min-height: 320px; display: flex; align-items: center; justify-content: center;
+    overflow: hidden; cursor: zoom-in;
+    position: relative;
+  }
+  .image-wrap img { max-width: 100%; max-height: 70vh; display: block; }
+  .image-wrap img.loading { opacity: 0.2; }
+
+  .spinner {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(15, 17, 22, 0.55); color: var(--muted); font-size: 14px;
+    gap: 10px; pointer-events: none;
+    opacity: 0; transition: opacity 120ms ease;
+  }
+  .spinner.visible { opacity: 1; }
+  .spinner::before {
+    content: ""; width: 18px; height: 18px; border-radius: 50%;
+    border: 2px solid var(--border); border-top-color: var(--accent);
+    animation: spin 700ms linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .prev-answer {
+    margin: 0 0 10px; font-size: 14px; min-height: 20px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .prev-answer .label { color: var(--muted); }
+  .prev-answer .value { font-weight: 600; }
+  .prev-answer.yes .value { color: var(--yes); }
+  .prev-answer.no  .value { color: var(--no); }
+
+  .buttons {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .buttons button {
+    padding: 16px; font-size: 16px; border: 0; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; border-radius: 8px;
+    transition: box-shadow 120ms ease, outline 120ms ease;
+  }
+  .buttons button.selected {
+    outline: 4px solid #fff;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.18), 0 0 14px rgba(255,255,255,0.35);
+  }
+  .buttons .yes { background: var(--yes); }
+  .buttons .no  { background: var(--no); }
+  .buttons kbd {
+    background: rgba(0,0,0,.25); color: #fff; padding: 2px 6px;
+    border-radius: 4px; font-size: 12px; font-family: ui-monospace, monospace;
+  }
+
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 14px;
+  }
+  .nav .hint { color: var(--muted); font-size: 13px; }
+
+  .note {
+    margin-top: 10px;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .note input { flex: 1; }
+  .note label { color: var(--muted); font-size: 13px; white-space: nowrap; }
+
+  .status { font-size: 13px; color: var(--muted); min-height: 1em; margin-top: 6px; text-align: right; }
+  .status.ok { color: #7ad69e; }
+
+  .modal-bg {
+    position: fixed; inset: 0; background: rgba(0,0,0,.7);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px; z-index: 20;
+  }
+  .modal {
+    max-width: 600px; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px;
+  }
+  .modal h2 { margin-top: 0; }
+  .modal .row { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+  .modal ul { color: var(--muted); line-height: 1.5; }
+  .modal kbd {
+    background: var(--bg); color: var(--text); padding: 2px 6px;
+    border-radius: 4px; font-size: 12px; font-family: ui-monospace, monospace;
+    border: 1px solid var(--border);
+  }
+
+  .summary { line-height: 1.6; }
+  .summary .stat { display: inline-block; min-width: 100px; }
+
+  footer {
+    margin-top: 28px; padding-top: 14px; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 12px; text-align: center;
+  }
+
+  /* ---------- mobile / touch ---------- */
+  @media (max-width: 600px) {
+    #app { padding: 10px; }
+    header { gap: 8px; padding-bottom: 8px; }
+    header .title { font-size: 15px; }
+    header .actions button { padding: 8px 10px; font-size: 14px; }
+    .reminder { font-size: 12px; padding: 8px 10px; }
+    .image-wrap { min-height: 260px; margin: 10px 0 14px; }
+    .image-wrap img { max-height: 55vh; }
+    .buttons button { padding: 18px 8px; font-size: 15px; }
+    .nav { flex-wrap: wrap; gap: 8px; }
+    .nav .hint { order: 3; width: 100%; font-size: 12px; text-align: center; }
+    .note { flex-direction: column; align-items: stretch; }
+    .note label { font-size: 12px; }
+  }
+  @media (hover: none) and (pointer: coarse) {
+    /* touch devices — hide keyboard-only hints, show touch-only ones */
+    .kb-only { display: none; }
+    .touch-only { display: inline; }
+    .image-wrap { cursor: default; }
+  }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h1>Chagas re-audit — reader access</h1>
+    <p>Enter the shared password to begin. If you don't have it, please reply to the email
+      you received from Chris.</p>
+    <div class="row">
+      <input id="pw" type="password" placeholder="Password" autofocus />
+      <button id="pw-submit">Enter</button>
+    </div>
+    <div id="pw-err" class="err"></div>
+    <p style="margin-top: 24px; font-size: 13px;">
+      <strong>Reader URL:</strong>
+      add <code>?reader=lidia</code>, <code>?reader=katie</code>, or
+      <code>?reader=chris</code> to the end of the address bar so your scores
+      are saved under your name.
+    </p>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <header>
+    <div>
+      <div class="title">Chagas blood-smear re-audit</div>
+      <div class="reader">Reader: <span id="reader-name">—</span></div>
+    </div>
+    <div class="actions">
+      <button id="help-btn">? Help</button>
+      <button id="reset-btn" title="Delete all of your saved answers and start over">Reset</button>
+      <button id="export-btn">Export scores</button>
+    </div>
+  </header>
+
+  <div class="reminder">
+    <strong>Your answers auto-save in this browser.</strong>
+    Use the same browser/device to resume — don't clear browsing data, and
+    don't use Incognito/Private mode, until you've exported your scores.
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+    <div class="progress-meta">
+      <span id="progress-text">0 of 84 scored</span>
+      <span id="current-id">—</span>
+    </div>
+  </div>
+
+  <div class="image-wrap" id="image-wrap">
+    <img id="current-image" alt="" />
+    <div id="image-spinner" class="spinner">Loading image…</div>
+  </div>
+
+  <div id="prev-answer" class="prev-answer" aria-live="polite"></div>
+
+  <div class="buttons">
+    <button class="yes" id="btn-yes"><span>Parasite present</span><kbd class="kb-only">Y</kbd></button>
+    <button class="no"  id="btn-no"><span>No parasite</span><kbd class="kb-only">N</kbd></button>
+  </div>
+
+  <div class="note">
+    <label for="note-field">Note (optional):</label>
+    <input id="note-field" type="text" placeholder="e.g. morphology ambiguous, partial occlusion" />
+  </div>
+
+  <div class="nav">
+    <button id="prev-btn">← Previous</button>
+    <button id="jump-unanswered-btn" class="hidden">Next unanswered (<span id="jump-unanswered-count">0</span>)</button>
+    <span class="hint kb-only">Arrow keys to navigate; Y / N to score. Use the note field if a call is genuinely ambiguous.</span>
+    <span class="hint touch-only">Use the note field if a call is genuinely ambiguous.</span>
+    <button id="next-btn">Next →</button>
+  </div>
+
+  <div id="save-status" class="status"></div>
+
+  <footer>
+    Research use only — not a clinical diagnostic tool.
+    Your answers are saved in this browser's local storage as you click;
+    keep using the same browser to resume a session.
+    When you have scored every image, click <strong>Export scores</strong> and email
+    the downloaded JSON back to Chris.
+  </footer>
+</div>
+
+<div id="help-modal" class="modal-bg hidden">
+  <div class="modal">
+    <h2>How to score</h2>
+    <ul>
+      <li>For each image, decide whether you believe at least one <em>T. cruzi</em>
+        trypomastigote is present.</li>
+      <li>Click <strong>Parasite present</strong> (or press <kbd>Y</kbd>) for yes,
+        or <strong>No parasite</strong> (<kbd>N</kbd>) for no. Each answer
+        advances to the next image automatically.</li>
+      <li>If a call is genuinely ambiguous, make your best judgment and use the
+        note field to record why (e.g. "morphology ambiguous," "partial occlusion").</li>
+      <li>Revisit any earlier image with the <kbd>←</kbd> / <kbd>→</kbd> arrow keys
+        or the Previous / Next buttons — you can change an answer at any time.</li>
+      <li>Click the image to open it at full resolution in a new tab.</li>
+      <li>Please score independently — do not consult the other readers or the
+        original annotations. We will combine scores after all readers submit.</li>
+      <li>Your answers are saved automatically in this browser as you click.
+        Keep using the same browser to resume.</li>
+      <li>When every image is answered, click <strong>Export scores</strong>
+        and email the downloaded JSON back to Chris.</li>
+    </ul>
+    <div class="row">
+      <button id="help-close">Got it</button>
+    </div>
+  </div>
+</div>
+
+<div id="reset-modal" class="modal-bg hidden">
+  <div class="modal">
+    <h2>Clear all answers?</h2>
+    <p>This will permanently delete all <strong id="reset-count">0</strong> answers you've
+      entered on this browser under reader <strong id="reset-reader">—</strong>.
+      You will start over at image 1.</p>
+    <p style="color: var(--muted); font-size: 13px;">
+      If you've already exported your scores to a JSON file, that file is not
+      affected. This only clears what's stored in this browser.</p>
+    <div class="row">
+      <button id="reset-cancel">Cancel</button>
+      <button id="reset-confirm" style="background: var(--no); color: #fff; border: 0;">Yes, delete all my answers</button>
+    </div>
+  </div>
+</div>
+
+<div id="incomplete-modal" class="modal-bg hidden">
+  <div class="modal">
+    <h2>Some images still need an answer</h2>
+    <p>You have <strong id="incomplete-count">0</strong> images without a Yes or No.
+      Please answer them before exporting so your scores are complete.</p>
+    <div class="row">
+      <button id="incomplete-close">Back</button>
+      <button id="incomplete-jump" style="background: var(--accent); color: #fff; border: 0;">Jump to first unanswered</button>
+    </div>
+  </div>
+</div>
+
+<div id="done-modal" class="modal-bg hidden">
+  <div class="modal">
+    <h2>All images scored — thank you!</h2>
+    <div class="summary" id="done-summary"></div>
+    <p style="color: var(--muted); margin-top: 14px;">
+      Click <strong>Export</strong> to download your score file, then email it back.
+      You can still revisit any image to change an answer before exporting.
+    </p>
+    <div class="row">
+      <button id="done-revisit">Revisit</button>
+      <button id="done-export" style="background: var(--accent); color: #fff; border: 0;">Export</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+"use strict";
+
+const PW_HASH_HEX = "75ee1a3c5f601e26bc2f0197572bf4b7bf0e513281505c830175438b79d12b3d";
+const TOTAL = 84;  
+const IMAGE_PATH = (i) => `images/img_${String(i).padStart(3, "0")}.jpg`;
+
+const $ = (id) => document.getElementById(id);
+
+async function sha256Hex(s) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function getReader() {
+  const p = new URLSearchParams(window.location.search);
+  const r = (p.get("reader") || "").toLowerCase().trim().replace(/[^a-z0-9_-]/g, "");
+  return r || "anonymous";
+}
+
+function storageKey(reader) { return `chagas-audit::${reader}`; }
+
+function loadScores(reader) {
+  try {
+    const raw = localStorage.getItem(storageKey(reader));
+    if (!raw) return {};
+    return JSON.parse(raw);
+  } catch { return {}; }
+}
+
+function saveScores(reader, data) {
+  localStorage.setItem(storageKey(reader), JSON.stringify(data));
+}
+
+function flashStatus(msg, ok=true) {
+  const el = $("save-status");
+  el.textContent = msg;
+  el.classList.toggle("ok", ok);
+  clearTimeout(flashStatus._t);
+  flashStatus._t = setTimeout(() => { el.textContent = ""; el.classList.remove("ok"); }, 1500);
+}
+
+let reader = "anonymous";
+let scores = {};      
+let idx = 1;          
+
+async function tryPassword() {
+  const pw = $("pw").value;
+  const err = $("pw-err");
+  err.textContent = "";
+  if (!pw) { err.textContent = "Please enter the password."; return; }
+  const hex = await sha256Hex(pw);
+  if (hex !== PW_HASH_HEX) { err.textContent = "Password incorrect."; return; }
+  
+  localStorage.setItem("chagas-audit-unlocked", "1");
+  start();
+}
+$("pw-submit").addEventListener("click", tryPassword);
+$("pw").addEventListener("keydown", (e) => { if (e.key === "Enter") tryPassword(); });
+
+start();
+
+function start() {
+  $("gate").classList.add("hidden");
+  $("app").classList.remove("hidden");
+  reader = getReader();
+  $("reader-name").textContent = reader;
+  scores = loadScores(reader);
+  
+  idx = findFirstUnscored() || 1;
+  
+  bindImageLoadHandlers();
+  render();
+
+  preloadAll();
+  
+  if (!localStorage.getItem(`chagas-audit::${reader}::seen-help`)) {
+    $("help-modal").classList.remove("hidden");
+    localStorage.setItem(`chagas-audit::${reader}::seen-help`, "1");
+  }
+}
+
+function bindImageLoadHandlers() {
+  const img = $("current-image");
+  const spin = $("image-spinner");
+  img.addEventListener("load", () => {
+    spin.classList.remove("visible");
+    img.classList.remove("loading");
+  });
+  img.addEventListener("error", () => {
+    
+    spin.classList.remove("visible");
+    img.classList.remove("loading");
+    spin.textContent = "Image failed to load — please check your connection and press Previous then Next to retry.";
+    spin.classList.add("visible");
+  });
+}
+
+const _preloaded = new Set();
+function preloadAll() {
+
+  for (let i = 1; i <= TOTAL; i++) {
+    if (_preloaded.has(i)) continue;
+    const im = new Image();
+    im.src = IMAGE_PATH(i);
+    _preloaded.add(i);
+  }
+}
+
+function idFor(i) { return `img_${String(i).padStart(3, "0")}.jpg`; }
+
+function isAnswered(i) {
+  const s = scores[idFor(i)];
+  return !!s && (s.answer === "yes" || s.answer === "no");
+}
+
+function findFirstUnscored() {
+  for (let i = 1; i <= TOTAL; i++) { if (!isAnswered(i)) return i; }
+  return TOTAL;
+}
+
+function countScored() {
+  let n = 0;
+  for (let i = 1; i <= TOTAL; i++) { if (isAnswered(i)) n++; }
+  return n;
+}
+
+function countUnanswered() { return TOTAL - countScored(); }
+
+function findNextUnanswered(fromIdx) {
+  
+  for (let i = fromIdx + 1; i <= TOTAL; i++) { if (!isAnswered(i)) return i; }
+  for (let i = 1; i <= fromIdx; i++) { if (!isAnswered(i)) return i; }
+  return 0;
+}
+
+function render() {
+  const id = idFor(idx);
+  const img = $("current-image");
+  const spin = $("image-spinner");
+  const nextSrc = IMAGE_PATH(idx);
+  if (img.getAttribute("src") !== nextSrc) {
+
+    img.classList.add("loading");
+    spin.textContent = "Loading image…";
+    spin.classList.add("visible");
+    img.src = nextSrc;
+  }
+  $("current-id").textContent = `${id} (${idx}/${TOTAL})`;
+  const scored = countScored();
+  const unanswered = TOTAL - scored;
+  $("progress-text").textContent = unanswered > 0
+    ? `${scored} of ${TOTAL} answered — ${unanswered} unanswered`
+    : `${scored} of ${TOTAL} answered`;
+  $("progress-fill").style.width = `${(scored / TOTAL) * 100}%`;
+  const cur = scores[id] || {};
+  $("note-field").value = cur.note || "";
+
+  const jumpBtn = $("jump-unanswered-btn");
+  if (unanswered > 0) {
+    $("jump-unanswered-count").textContent = unanswered;
+    jumpBtn.classList.remove("hidden");
+  } else {
+    jumpBtn.classList.add("hidden");
+  }
+  
+  $("btn-yes").classList.toggle("selected", cur.answer === "yes");
+  $("btn-no").classList.toggle("selected",  cur.answer === "no");
+  const prev = $("prev-answer");
+  prev.classList.remove("yes", "no");
+  if (cur.answer === "yes") {
+    prev.classList.add("yes");
+    prev.innerHTML = '<span class="label">Your previous answer:</span> <span class="value">Parasite present</span>';
+  } else if (cur.answer === "no") {
+    prev.classList.add("no");
+    prev.innerHTML = '<span class="label">Your previous answer:</span> <span class="value">No parasite</span>';
+  } else {
+    prev.innerHTML = "";
+  }
+  $("prev-btn").disabled = idx <= 1;
+  $("next-btn").disabled = idx >= TOTAL;
+}
+
+function preload(i) {
+  if (i < 1 || i > TOTAL) return;
+  const im = new Image(); im.src = IMAGE_PATH(i);
+}
+
+function record(answer) {
+  const id = idFor(idx);
+  scores[id] = {
+    answer,
+    note: $("note-field").value.trim(),
+    timestamp: new Date().toISOString(),
+  };
+  saveScores(reader, scores);
+  flashStatus("Saved");
+  
+  if (idx < TOTAL) {
+    idx += 1;
+    render();
+    preload(idx + 1); preload(idx + 2);
+  } else {
+    render();
+    maybeShowDone();
+  }
+}
+
+function navigate(delta) {
+  
+  const id = idFor(idx);
+  const note = $("note-field").value.trim();
+  if (scores[id] && note && scores[id].note !== note) {
+    scores[id].note = note;
+    saveScores(reader, scores);
+  }
+  const next = Math.min(TOTAL, Math.max(1, idx + delta));
+  if (next !== idx) {
+    idx = next;
+    render();
+    preload(idx + 1);
+  }
+}
+
+function maybeShowDone() {
+  if (countScored() >= TOTAL) {
+    let yes = 0, no = 0;
+    for (let i = 1; i <= TOTAL; i++) {
+      const a = (scores[idFor(i)] || {}).answer;
+      if (a === "yes") yes++; else if (a === "no") no++;
+    }
+    $("done-summary").innerHTML =
+      `<div><span class="stat">Yes:</span> <strong>${yes}</strong></div>` +
+      `<div><span class="stat">No:</span> <strong>${no}</strong></div>`;
+    $("done-modal").classList.remove("hidden");
+  }
+}
+
+$("btn-yes").addEventListener("click", () => record("yes"));
+$("btn-no").addEventListener("click",  () => record("no"));
+$("prev-btn").addEventListener("click", () => navigate(-1));
+$("next-btn").addEventListener("click", () => navigate(+1));
+$("jump-unanswered-btn").addEventListener("click", () => {
+  const next = findNextUnanswered(idx);
+  if (next === 0) { maybeShowDone(); return; }
+  idx = next;
+  render();
+  preload(idx + 1);
+});
+$("image-wrap").addEventListener("click", () => window.open(IMAGE_PATH(idx), "_blank"));
+
+$("note-field").addEventListener("input", () => {
+  const id = idFor(idx);
+
+  if (!scores[id]) return;
+  scores[id].note = $("note-field").value.trim();
+  saveScores(reader, scores);
+});
+
+$("help-btn").addEventListener("click", () => $("help-modal").classList.remove("hidden"));
+$("help-close").addEventListener("click", () => $("help-modal").classList.add("hidden"));
+
+$("reset-btn").addEventListener("click", () => {
+  $("reset-count").textContent = Object.keys(scores).length;
+  $("reset-reader").textContent = reader;
+  $("reset-modal").classList.remove("hidden");
+});
+$("reset-cancel").addEventListener("click", () => $("reset-modal").classList.add("hidden"));
+$("reset-confirm").addEventListener("click", () => {
+  
+  localStorage.removeItem(storageKey(reader));
+  scores = {};
+  idx = 1;
+  $("reset-modal").classList.add("hidden");
+  render();
+  preload(idx + 1); preload(idx + 2);
+  flashStatus("All answers cleared — starting over");
+});
+
+$("done-revisit").addEventListener("click", () => $("done-modal").classList.add("hidden"));
+$("done-export").addEventListener("click", () => { $("done-modal").classList.add("hidden"); exportScores(); });
+
+$("incomplete-close").addEventListener("click", () => $("incomplete-modal").classList.add("hidden"));
+$("incomplete-jump").addEventListener("click", () => {
+  $("incomplete-modal").classList.add("hidden");
+  const next = findNextUnanswered(idx);
+  if (next > 0) { idx = next; render(); preload(idx + 1); }
+});
+
+$("export-btn").addEventListener("click", exportScores);
+
+function exportScores() {
+  
+  const id = idFor(idx);
+  const note = $("note-field").value.trim();
+  if (scores[id] && note && scores[id].note !== note) {
+    scores[id].note = note;
+    saveScores(reader, scores);
+  }
+  
+  const missing = countUnanswered();
+  if (missing > 0) {
+    $("incomplete-count").textContent = missing;
+    $("incomplete-modal").classList.remove("hidden");
+    return;
+  }
+  const blob = new Blob([JSON.stringify({
+    reader,
+    exported_at: new Date().toISOString(),
+    total_images: TOTAL,
+    scores,
+  }, null, 2)], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  a.download = `scores_${reader}_${stamp}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  flashStatus("Exported — please email the file to Chris");
+}
+
+window.addEventListener("keydown", (e) => {
+  if (document.activeElement && document.activeElement.tagName === "INPUT") return; 
+  if ($("help-modal").classList.contains("hidden") === false) {
+    if (e.key === "Escape") $("help-modal").classList.add("hidden");
+    return;
+  }
+  if ($("done-modal").classList.contains("hidden") === false) return;
+  const k = e.key.toLowerCase();
+  if (k === "y") { e.preventDefault(); record("yes"); }
+  else if (k === "n") { e.preventDefault(); record("no"); }
+  else if (e.key === "ArrowLeft")  { e.preventDefault(); navigate(-1); }
+  else if (e.key === "ArrowRight") { e.preventDefault(); navigate(+1); }
+  else if (k === "?") { $("help-modal").classList.remove("hidden"); }
+});
+
+})();
+</script>
+</body>
+</html>

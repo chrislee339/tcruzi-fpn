@@ -1,0 +1,427 @@
+{
+  "reader": "lidia",
+  "exported_at": "2026-04-18T21:52:47.738Z",
+  "total_images": 84,
+  "scores": {
+    "img_001.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:41:20.277Z"
+    },
+    "img_002.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:41:23.807Z"
+    },
+    "img_003.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:41:36.544Z"
+    },
+    "img_004.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:41:50.907Z"
+    },
+    "img_005.jpg": {
+      "answer": "yes",
+      "note": "Overlapping on a red blood cell a bit ambiguous",
+      "timestamp": "2026-04-18T21:42:25.957Z"
+    },
+    "img_006.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:43:12.088Z"
+    },
+    "img_007.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:43:16.370Z"
+    },
+    "img_008.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:43:19.370Z"
+    },
+    "img_009.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:43:32.488Z"
+    },
+    "img_010.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:43:50.172Z"
+    },
+    "img_011.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:13.671Z"
+    },
+    "img_012.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:15.837Z"
+    },
+    "img_013.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:19.770Z"
+    },
+    "img_014.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:23.720Z"
+    },
+    "img_015.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:32.987Z"
+    },
+    "img_016.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:45.737Z"
+    },
+    "img_017.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:47.503Z"
+    },
+    "img_018.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:49.469Z"
+    },
+    "img_019.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:52.382Z"
+    },
+    "img_020.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:44:59.766Z"
+    },
+    "img_021.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:01.448Z"
+    },
+    "img_022.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:02.786Z"
+    },
+    "img_023.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:14.686Z"
+    },
+    "img_024.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:16.651Z"
+    },
+    "img_025.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:17.865Z"
+    },
+    "img_026.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:28.218Z"
+    },
+    "img_027.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:31.718Z"
+    },
+    "img_028.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:40.998Z"
+    },
+    "img_029.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:42.886Z"
+    },
+    "img_030.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:45:44.064Z"
+    },
+    "img_031.jpg": {
+      "answer": "yes",
+      "note": "A bit ambiguous, morphology and overlapping red blood cells",
+      "timestamp": "2026-04-18T21:46:11.332Z"
+    },
+    "img_032.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:18.846Z"
+    },
+    "img_033.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:20.696Z"
+    },
+    "img_034.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:22.030Z"
+    },
+    "img_035.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:32.296Z"
+    },
+    "img_036.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:34.349Z"
+    },
+    "img_037.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:35.463Z"
+    },
+    "img_038.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:45.659Z"
+    },
+    "img_039.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:55.946Z"
+    },
+    "img_040.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:58.079Z"
+    },
+    "img_041.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:46:59.578Z"
+    },
+    "img_042.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:47:13.409Z"
+    },
+    "img_043.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:47:17.680Z"
+    },
+    "img_044.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:47:18.728Z"
+    },
+    "img_045.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:47:19.727Z"
+    },
+    "img_046.jpg": {
+      "answer": "no",
+      "note": "There is a weird morphology on the mid bottom left that I would zoom into better to confirm",
+      "timestamp": "2026-04-18T21:48:04.976Z"
+    },
+    "img_047.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:17.461Z"
+    },
+    "img_048.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:18.676Z"
+    },
+    "img_049.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:19.874Z"
+    },
+    "img_050.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:26.354Z"
+    },
+    "img_051.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:36.890Z"
+    },
+    "img_052.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:45.190Z"
+    },
+    "img_053.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:50.973Z"
+    },
+    "img_054.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:56.824Z"
+    },
+    "img_055.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:57.974Z"
+    },
+    "img_056.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:48:59.590Z"
+    },
+    "img_057.jpg": {
+      "answer": "yes",
+      "note": "Could be a different species not T cruzi",
+      "timestamp": "2026-04-18T21:49:05.792Z"
+    },
+    "img_058.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:49:36.223Z"
+    },
+    "img_059.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:49:37.357Z"
+    },
+    "img_060.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:49:44.341Z"
+    },
+    "img_061.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:49:47.704Z"
+    },
+    "img_062.jpg": {
+      "answer": "yes",
+      "note": "Partially cut",
+      "timestamp": "2026-04-18T21:49:58.224Z"
+    },
+    "img_063.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:50:10.259Z"
+    },
+    "img_064.jpg": {
+      "answer": "yes",
+      "note": "A bit blurry",
+      "timestamp": "2026-04-18T21:50:35.668Z"
+    },
+    "img_065.jpg": {
+      "answer": "no",
+      "note": "Ambiguous morphology",
+      "timestamp": "2026-04-18T21:50:53.620Z"
+    },
+    "img_066.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:50:58.136Z"
+    },
+    "img_067.jpg": {
+      "answer": "yes",
+      "note": "Ambiguous",
+      "timestamp": "2026-04-18T21:51:10.385Z"
+    },
+    "img_068.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:13.649Z"
+    },
+    "img_069.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:15.165Z"
+    },
+    "img_070.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:23.967Z"
+    },
+    "img_071.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:35.416Z"
+    },
+    "img_072.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:39.332Z"
+    },
+    "img_073.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:42.783Z"
+    },
+    "img_074.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:51:44.299Z"
+    },
+    "img_075.jpg": {
+      "answer": "no",
+      "note": "Ambiguous",
+      "timestamp": "2026-04-18T21:51:57.051Z"
+    },
+    "img_076.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:03.032Z"
+    },
+    "img_077.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:04.263Z"
+    },
+    "img_078.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:05.515Z"
+    },
+    "img_079.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:10.101Z"
+    },
+    "img_080.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:12.783Z"
+    },
+    "img_081.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:19.016Z"
+    },
+    "img_082.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:25.466Z"
+    },
+    "img_083.jpg": {
+      "answer": "no",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:36.516Z"
+    },
+    "img_084.jpg": {
+      "answer": "yes",
+      "note": "",
+      "timestamp": "2026-04-18T21:52:43.031Z"
+    }
+  }
+}
