@@ -77,3 +77,13 @@ python fieldsplit/grad_cam_analysis.py
 ## License
 
 MIT License. See `LICENSE`.
+
+## Citation
+
+If you use this code, please cite the archived release:
+
+> Lee C, Gual-Gonzalez L, Lynn MK, Braumuller K, Nolan MS, Valafar H. *tcruzi-fpn: code and audit tooling for a feature pyramid classifier of* Trypanosoma cruzi *in smartphone blood smear microscopy.* Zenodo. 2026. doi:10.5281/zenodo.19711401
+
+and the accompanying dataset:
+
+> *tcruzi-fpn dataset: slide-level partitioned quadrant images for* Trypanosoma cruzi *classification from the Morais et al. smartphone microscopy corpus.* Zenodo. 2026. doi:10.5281/zenodo.19711048
