@@ -36,7 +36,7 @@ tcruzi-fpn/
 
 ## Data
 
-The underlying smartphone-microscopy images and parasite-coordinate annotations are from Morais et al. (2022) and are distributed through the Supplemental Information of that publication. The preprocessed 1,224 × 1,632 quadrant images used as direct inputs to our classifier (~6.41 GB) are deposited at Zenodo: **DOI-PLACEHOLDER**.
+The underlying smartphone-microscopy images and parasite-coordinate annotations are from Morais et al. (2022) and are distributed through the Supplemental Information of that publication. The preprocessed 1,224 × 1,632 quadrant images used as direct inputs to our classifier (~16 GB, 5,788 images across train/val/test) are deposited at Zenodo: **doi:10.5281/zenodo.19711048**.
 
 ## Environment
 
