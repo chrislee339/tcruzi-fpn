@@ -417,8 +417,6 @@ async function tryPassword() {
 $("pw-submit").addEventListener("click", tryPassword);
 $("pw").addEventListener("keydown", (e) => { if (e.key === "Enter") tryPassword(); });
 
-start();
-
 function start() {
   $("gate").classList.add("hidden");
   $("app").classList.remove("hidden");
@@ -693,6 +691,8 @@ window.addEventListener("keydown", (e) => {
   else if (e.key === "ArrowRight") { e.preventDefault(); navigate(+1); }
   else if (k === "?") { $("help-modal").classList.remove("hidden"); }
 });
+
+start();
 
 })();
 </script>
